@@ -1,10 +1,21 @@
+jasm@jasm-laptop:~/Downloads$ ssh -i "NorthVirginia.pem" ec2-user@ec2-35-172-250-202.compute-1.amazonaws.com
+Last login: Tue Jul 28 22:11:40 2020 from 186.167.245.2
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
 [ec2-user@ip-24-6-4-20 ~]$ mysql -u admin -D udacity -h read-replica-udacitiy-db.c6enw2kum1pc.us-east-1.rds.amazonaws.com -p
+Enter password: 
+ERROR 2005 (HY000): Unknown MySQL server host 'read-replica-udacitiy-db.c6enw2kum1pc.us-east-1.rds.amazonaws.com' (0)
+[ec2-user@ip-24-6-4-20 ~]$ mysql -u admin -D udacity -h rr-udacity-project.c6enw2kum1pc.us-east-1.rds.amazonaws.com -p
 Enter password: 
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
 
 Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 11
+Your MySQL connection id is 15
 Server version: 8.0.17 Source distribution
 
 Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
@@ -15,7 +26,7 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> select * from customer;                                                                                             +----+-----------------+-----------------------------+-------------+
+mysql> select * from customer;                                                  +----+-----------------+-----------------------------+-------------+
 | ID | FullName        | Address                     | PhoneNumber |
 +----+-----------------+-----------------------------+-------------+
 |  1 | Gabriel Trompiz | 305 - 14th Ave. S. Suite 3B | 1737987654  |
@@ -25,7 +36,7 @@ mysql> select * from customer;                                                  
 mysql> insert into customer (ID, Fullname, Address, PhoneNumber) values (2,'Ramdall Lamus', '305 - 14th Ave. S. Suite 3B', '17378785241');
 Query OK, 1 row affected (0,01 sec)
 
-mysql> select * from customer;                                                                                             +----+-----------------+-----------------------------+-------------+
+mysql> select * from customer;                                                  +----+-----------------+-----------------------------+-------------+
 | ID | FullName        | Address                     | PhoneNumber |
 +----+-----------------+-----------------------------+-------------+
 |  1 | Gabriel Trompiz | 305 - 14th Ave. S. Suite 3B | 1737987654  |
@@ -35,4 +46,3 @@ mysql> select * from customer;                                                  
 
 mysql> exit
 Bye
-[ec2-user@ip-24-6-4-20 ~]$ 

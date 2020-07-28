@@ -1,4 +1,10 @@
 Based on this multi-az and multi-region RDS solution, we can handle good times in terms of RTO and RPO.
-For a single AZ interrupt, 30 minutes of RPO can be extensive and 1 hour of RPO for single region interruption.
-Also, speaking of RTO for a single AZ cut, 10 minutes may be reasonable while setting the other AZ, 
-and for a single region cut it may be 40 minutes.
+For a single AZ interrupt, 'Amazon RDS performs an automatic failover to the standby DB instance. 
+Since the endpoint for your DB instance remains the same after a failover, 
+so our application can resume database operation without the need for 
+manual administrative intervention' that means or RPO will be aprox 0 and 22 min of RPO for single region interruption based on sla's multi a-z .
+
+Also, speaking of RTO for a single AZ cut will be 0 too 'cause this will be automatic, 
+and for a single region cut it may be 20 minutes. While the team in charge receives the alerts,
+take time to wake up and point to the database in the standby zone
+
